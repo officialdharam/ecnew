@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="om" default="om.war">
+	<property file="build.properties" />
+	
+	<!-- Base library path -->
+	<path id="om.lib.base">
+		<fileset dir="${lib.dir}">
+			<include name="*.jar"/>
+		</fileset>
+	</path>
+
+	<path id="om.compile.classpath">
+		<path refid="om.lib.base"/>
+	</path>
+
+	<target name="om.init">
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${dist.dir}" />
+		<mkdir dir="${classes.dir}"/>
+	</target>
+
+	<target name="om.compile" depends="om.init">
+		<javac debug="true" destdir="${classes.dir}" srcdir="src" compiler="javac1.6">
+			<classpath refid="om.compile.classpath"/>
+		</javac>		
+	</target>
+
+	<target name="om.clean">
+		<delete dir="${build.dir}"/>
+		<delete file="${dist.dir}/om.war"/>
+	</target>
+
+	<target name="om.war" depends="om.clean, om.init, om.compile">		
+		<war destfile="${dist.dir}/om.war" webxml="${project.dir}/WebContent/WEB-INF/web.xml" duplicate="preserve">			
+			<fileset dir="${project.dir}/WebContent"/>
+			<lib dir="${lib.dir}">
+				<include name="*.jar"/>
+				<exclude name="catalina.jar"/>
+				<exclude name="bcprov-jdk15-1.46.jar"/>
+				<exclude name="servlet-api-2.5.jar"/>
+				<exclude name="junit-4.8.2.jar"/>
+			</lib>			
+			<classes dir="${classes.dir}" />
+		</war>
+	</target>
+	
+	<property name="parent.dir" value="${basedir}" />
+	
+	<presetdef name="javac">
+		<javac includeantruntime="false" />
+	</presetdef>
+	
+	<tstamp>
+		<format property="build.time" pattern="yyyyMMdd_kkmm" locale="en,UK"/>
+	</tstamp>
+   	
+	<target name="init">
+
+		<mkdir dir="${om.dist.dir}" />
+		<mkdir dir="${om.src.dist.dir}" />
+		
+		<echo>Creating ${om.dist.dir}/build_version.properties</echo>
+		<echo file="${om.dist.dir}/build_version.properties">
+			Product Name: ${om.product.name}
+			Product Version: ${om.product.version}
+			Build Number: ${build.time}			
+		</echo>
+
+        <echo>Ant version: ${ant.version}</echo>
+        <echo>Java version: ${ant.java.version}</echo>
+        <echo>OS Name: ${os.name}</echo>
+		<echo>Common lib directory: ${om.lib.dir} </echo>
+		<echo>Product Name: ${om.product.name} </echo>
+		<echo>Product Version: ${om.product.version} </echo>
+	</target>
+	
+	<target name="clean">
+		<!-- Cleaning cs.dist.dir -->
+		<delete includeemptydirs="true" failonerror="false" >
+			<fileset dir="${om.dist.dir}" includes="**/*"/>
+		</delete>
+		<delete includeemptydirs="true" failonerror="false" >
+			<fileset dir="${om.src.dist.dir}" includes="**/*"/>
+		</delete>
+	</target>		
+	
+	<target name="tomcat-bundle" depends="init, om.war">
+		<echo>Java temp dir: ${om.temp.dir}</echo>
+		<delete dir="${om.temp.dir}/server" />
+		<unzip src="${om.tomcat.dir}/apache-tomcat-7.0.28.zip" dest="${om.temp.dir}/server">
+			<globmapper from="apache-tomcat-7.0.28/*" to="*"/>
+		</unzip>
+		<delete includeemptydirs="true" failonerror="true" >
+			<fileset dir="${om.temp.dir}/server/webapps" includes="**/*"/>
+		</delete>		
+		<replace file="${om.temp.dir}/server/conf/catalina.properties" token="common.loader=" value="common.loader=${catalina.base}/conf,${catalina.home}/conf," />
+		<copy file="${project.dir}/src/app.properties" todir="${om.temp.dir}/server/conf/" />
+		<copy file="${project.dir}/src/log4j.properties" todir="${om.temp.dir}/server/conf/" />			
+		<copy file="${lib.dir}/catalina.jar" todir="${om.temp.dir}/server/lib/" overwrite="true" />
+	</target>
+	
+	<target name="tomcat-bundle-app" depends="tomcat-bundle" description="Bundles tomcat with ">
+		<echo>Creating tomcat bundle for hot swap services</echo>
+			
+		<zip destfile="${om.dist.dir}/tomcat-bundle-app.zip" >
+			<zipfileset dir="${om.temp.dir}/server" prefix="server" />
+			<zipfileset dir="${dist.dir}" includes="om.war" fullpath="server/webapps/om.war" />
+		</zip>		
+	</target>
+	
+	
+
+</project>
