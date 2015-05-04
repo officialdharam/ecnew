@@ -81,7 +81,7 @@ public class GroupMapEntity {
 
     @Override
     public String toString() {
-	return "GroupMapEntity [id=" + id + ", groupID=" + groupID + ", userID=" + userID + ", updatedAt=" + updatedAt
+	return "groupmap [id=" + id + ", groupID=" + groupID + ", userID=" + userID + ", updatedAt=" + updatedAt
 		+ ", createdAt=" + createdAt + ", active=" + active + "]";
     }
 

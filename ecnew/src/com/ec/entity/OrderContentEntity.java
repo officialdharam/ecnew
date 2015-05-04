@@ -82,7 +82,7 @@ public class OrderContentEntity {
 
     @Override
     public String toString() {
-	return "OrderContentEntity [id=" + id + ", orderID=" + orderID + ", categoryID=" + categoryID + ", quantity=" + quantity
+	return "ordercontent [id=" + id + ", orderID=" + orderID + ", categoryID=" + categoryID + ", quantity=" + quantity
 		+ ", createDate=" + createDate + ", updateDate=" + updateDate + "]";
     }
 }

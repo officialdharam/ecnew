@@ -7,8 +7,37 @@
 <title>Generic Error Page</title>
 </head>
 <body>
+	<div id="headerContainer">
+		<div id="headerdiv" class="headerdiv">
+			<a href="http://extracarbon.com/"><img
+				src="${pageContext.request.contextPath}/images/logo.png" /></a>
+			<div id="nav">
+				<div id="nav_wrapper">
+					<ul>
+						<li><a href="http://extracarbon.com/">Go Green</a>
+							<ul>
+								<li><a href="http://extracarbon.com/other/about_us">About
+										Extracarbon</a></li>
+								<li><a href="http://extracarbon.com/other/careers">Career</a></li>
+								<li><a href="http://extracarbon.com/other/corp_clients">Corporate
+										Goals</a></li>
+								<li><a href="http://extracarbon.blogspot.in/">Blog</a></li>
+							</ul></li>
+						<li><a href="http://jhoomley.com/">Jhoomley</a></li>
+						<li><a href="#">Sell Products</a></li>
+						<li><a href="http://extracarbon.com/other/pickup">Request
+								Pickup</a></li>
+						<li><a href="#">Redeem Coupon</a></li>
+						<li><a href="http://extracarbon.com/other/contact_us">Contact
+								Us</a></li>
+					</ul>
 
-	<h1>Some Error occurred</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<h1>Some Error occurred. May be you need to contact the
+		administrator.</h1>
 
 </body>
 </html>

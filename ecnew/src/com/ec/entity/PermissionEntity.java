@@ -35,7 +35,7 @@ public class PermissionEntity {
 
     @Override
     public String toString() {
-	return "PermissionEntity [id=" + id + ", link=" + link + "]";
+	return "permission [id=" + id + ", link=" + link + "]";
     }
     
     

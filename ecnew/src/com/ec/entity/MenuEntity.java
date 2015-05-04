@@ -80,7 +80,7 @@ public class MenuEntity {
 
     @Override
     public String toString() {
-	return "MenuEntity [id=" + id + ", name=" + name + ", displayName=" + displayName + ", href=" + href + ", parent="
+	return "menu [id=" + id + ", name=" + name + ", displayName=" + displayName + ", href=" + href + ", parent="
 		+ parent + ", description=" + description + "]";
     }
 

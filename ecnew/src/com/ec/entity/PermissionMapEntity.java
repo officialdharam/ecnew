@@ -47,7 +47,7 @@ public class PermissionMapEntity {
 
     @Override
     public String toString() {
-	return "PermissionMapEntity [id=" + id + ", permissionID=" + permissionID + ", groupID=" + groupID + "]";
+	return "permissionmap [id=" + id + ", permissionID=" + permissionID + ", groupID=" + groupID + "]";
     }
 
     

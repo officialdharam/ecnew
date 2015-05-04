@@ -62,7 +62,7 @@ public class OutboundEntity {
 
     @Override
     public String toString() {
-	return "OutboundEntity [id=" + id + ", categoryName=" + categoryName + ", centerId=" + centerId + ", lastUpdated="
+	return "outbound [id=" + id + ", categoryName=" + categoryName + ", centerId=" + centerId + ", lastUpdated="
 		+ lastUpdated + ", quantity=" + quantity + "]";
     }
 

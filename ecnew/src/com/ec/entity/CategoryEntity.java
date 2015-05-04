@@ -57,7 +57,7 @@ public class CategoryEntity {
 
     @Override
     public String toString() {
-	return "CategoryEntity [categoryID=" + categoryID + ", categoryName=" + categoryName + ", categoryDescription="
+	return "category [categoryID=" + categoryID + ", categoryName=" + categoryName + ", categoryDescription="
 		+ categoryDescription + ", unit=" + unit + "]";
     }
 

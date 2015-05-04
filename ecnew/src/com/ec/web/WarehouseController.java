@@ -374,7 +374,7 @@ public class WarehouseController extends BaseController {
 		resp.setStatusMsg(Constant.SUCCESS_RESPONSE_MGS);
 		List<String> warehouseIDList = new ArrayList<String>();
 		warehouseIDList.add(String.valueOf(warehouseID));
-		resp.setResults(warehouseIDList);
+		resp.setResults(warehouseIDList);	
 	    }
 	} catch (Exception e) {
 	    log.error("Request ID " + randomUUID + ". Error occurred while adding warehouse  : ", e);

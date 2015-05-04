@@ -148,7 +148,7 @@ public class OrderEntity {
 
     @Override
     public String toString() {
-	return "OrderEntity [customerID=" + customerID + ", centerID=" + centerID + ", status=" + status + ", orderDate="
+	return "orders [customerID=" + customerID + ", centerID=" + centerID + ", status=" + status + ", orderDate="
 		+ orderDate + ", pickUpDate=" + pickUpDate + ", pickupTime=" + pickupTime + "]";
     }
 

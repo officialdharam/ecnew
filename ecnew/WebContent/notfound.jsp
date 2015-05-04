@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Resource Not available</title>
 </head>
 <body>
 	<div id="headerContainer">
@@ -36,6 +36,8 @@
 			</div>
 		</div>
 	</div>
-	<h1>Error occurred. Please press the back button and retry</h1>
+	<h1>The resource you are trying to access is not available. May be
+		you need to contact the administrator.</h1>
+
 </body>
 </html>

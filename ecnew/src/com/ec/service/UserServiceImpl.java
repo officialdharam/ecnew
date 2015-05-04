@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.ec.dao.ExportDAO;
 import com.ec.dao.MenuDAO;
 import com.ec.dao.OrderDAO;
 import com.ec.dao.UserDAO;
@@ -37,6 +38,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private OrderDAO orderDAO;
+    
+    @Autowired
+    private ExportDAO exportDAO;
 
     @Override
     public int addUser(List<NameValuePair> user) {
@@ -181,5 +185,23 @@ public class UserServiceImpl implements UserService {
 	    userMap.put(g.getId(), g);
 	}
 	return userMap;
+    }
+
+    @Override
+    @Transactional
+    public List<String> exportDatabase() {
+	 List<List<? extends Object>> exportedDatabase = exportDAO.exportDatabase();
+	 List<String> tablesFlat = new ArrayList<String>();
+	 for(List<? extends Object> table : exportedDatabase){
+	     if(table != null){
+		 for(Object o : table){
+		     tablesFlat.add(o.toString());
+		     tablesFlat.add("\n");
+		 }
+		 tablesFlat.add("\n");
+	     }
+	 }
+	 
+	return tablesFlat;
     }
 }

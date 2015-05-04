@@ -104,7 +104,7 @@ public class GroupEntity {
 
     @Override
     public String toString() {
-	return "GroupEntity [id=" + id + ", name=" + name + ", description=" + description + ", createdAt=" + createdAt
+	return "groups [id=" + id + ", name=" + name + ", description=" + description + ", createdAt=" + createdAt
 		+ ", updatedAt=" + updatedAt + ", active=" + active + ", priority=" + priority + ", landingPage=" + landingPage
 		+ "]";
     }

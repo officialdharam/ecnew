@@ -116,6 +116,7 @@ public class HomeController extends BaseController {
 
 		    // create a session after login
 		    session = request.getSession(true);
+		    session.setMaxInactiveInterval(10*60);
 		    session.setAttribute("centers", centerNames);
 		    session.setAttribute("authenticated", "authenticated");
 		    session.setAttribute(Util.USERNAME, username);

@@ -26,6 +26,7 @@
 	</target>
 
 	<target name="om.clean">
+		<echo>Lib dir: ${lib.dir}</echo>
 		<delete dir="${build.dir}"/>
 		<delete file="${dist.dir}/om.war"/>
 	</target>
@@ -56,8 +57,7 @@
    	
 	<target name="init">
 
-		<mkdir dir="${om.dist.dir}" />
-		<mkdir dir="${om.src.dist.dir}" />
+		<mkdir dir="${om.dist.dir}" />		
 		
 		<echo>Creating ${om.dist.dir}/build_version.properties</echo>
 		<echo file="${om.dist.dir}/build_version.properties">
@@ -78,10 +78,7 @@
 		<!-- Cleaning cs.dist.dir -->
 		<delete includeemptydirs="true" failonerror="false" >
 			<fileset dir="${om.dist.dir}" includes="**/*"/>
-		</delete>
-		<delete includeemptydirs="true" failonerror="false" >
-			<fileset dir="${om.src.dist.dir}" includes="**/*"/>
-		</delete>
+		</delete>		
 	</target>		
 	
 	<target name="tomcat-bundle" depends="init, om.war">

@@ -94,7 +94,7 @@ public class DeviceEntity {
 
     @Override
     public String toString() {
-	return "DeviceEntity [deviceID=" + deviceID + ", centerID=" + centerID + ", active=" + active + ", assigned=" + assigned
+	return "device [deviceID=" + deviceID + ", centerID=" + centerID + ", active=" + active + ", assigned=" + assigned
 		+ ", code=" + code + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + "]";
     }
 }

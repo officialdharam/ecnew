@@ -653,3 +653,24 @@ table.tablesorter .headerSortDown {
 	height:40px;
 	margin-left:10px;
 }
+
+#rightopsExport li{
+		font-size: 14x;
+		font-weight: 700px;
+}
+.fetchButton{
+	margin-top: 10px;
+	margin-left: 10px;
+	height: 42px;
+	width: 180px;
+	line-height: 40px;
+	background-color: #62B940;
+	border: 1px solid #B2D135;
+	height: 42px;
+	font-size : 14px;
+	font-weight : 700;
+	color: black;
+	text-align: center;
+	text-decoration: none;
+	
+}

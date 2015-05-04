@@ -90,7 +90,7 @@ public class CenterEntity {
 
     @Override
     public String toString() {
-	return "CenterEntity [centerID=" + centerID + ", centerName=" + centerName + ", address=" + address + ", city=" + city
+	return "center [centerID=" + centerID + ", centerName=" + centerName + ", address=" + address + ", city=" + city
 		+ ", pincode=" + pincode + ", state=" + state + ", active=" + active + "]";
     }
 

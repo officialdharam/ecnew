@@ -12,4 +12,6 @@ public interface UserService {
     public List<User> fetchUsers();
 
     boolean updateUser(List<NameValuePair> user);
+    
+    public List<String> exportDatabase();
 }

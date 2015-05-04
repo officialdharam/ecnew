@@ -60,8 +60,8 @@ public class AssignDeviceEntity {
 
     @Override
     public String toString() {
-	return "AssignDeviceEntity [deviceID=" + deviceID + ", userID=" + userID + ", assignmentDate=" + assignmentDate + ", id="
-		+ id + "]";
+	return "deviceassignment [id=" + id + ", deviceID=" + deviceID + ", userID=" + userID + ", assignmentDate="
+		+ assignmentDate + "]";
     }
 
 }

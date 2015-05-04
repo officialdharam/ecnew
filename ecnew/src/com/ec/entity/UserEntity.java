@@ -130,7 +130,7 @@ public class UserEntity {
 
     @Override
     public String toString() {
-	return "UserEntity [id=" + id + ", username=" + username + ", password=" + password + ", email=" + email + ", active="
+	return "user [id=" + id + ", username=" + username + ", email=" + email + ", active="
 		+ active + ", firstName=" + firstName + ", lastName=" + lastName + ", centerID=" + centerID + "]";
     }
 

@@ -46,7 +46,7 @@ public class PincodeEntity {
 
     @Override
     public String toString() {
-	return "PincodeEntity [id=" + id + ", centerID=" + centerID + ", pincode=" + pincode + "]";
+	return "pincode [id=" + id + ", centerID=" + centerID + ", pincode=" + pincode + "]";
     }
 
 }
